@@ -1,0 +1,6 @@
+{
+  "name": "CM 3321 Exam Study Platform",
+  "description": "Comprehensive exam revision platform for CM 3321 Logic Programming and Artificial Cognitive Systems, featuring past paper solutions, lecture study notes, topic explorer, and revision guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
