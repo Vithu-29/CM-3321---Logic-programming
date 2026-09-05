@@ -235,9 +235,9 @@ export const LectureNotesView: React.FC<LectureNotesViewProps> = ({
                         <div className="overflow-x-auto">
                           <table className="min-w-full text-xs text-center border-collapse">
                             <thead>
-                              <tr className="bg-slate-200 dark:bg-slate-700">
+                              <tr className="bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100">
                                 {concept.visual.data.headers?.map((h: string, hi: number) => (
-                                  <th key={hi} className="p-2 border border-slate-300 dark:border-slate-600 font-bold">
+                                  <th key={hi} className="p-2 border border-slate-300 dark:border-slate-600 font-bold font-mono">
                                     {h}
                                   </th>
                                 ))}
@@ -247,7 +247,7 @@ export const LectureNotesView: React.FC<LectureNotesViewProps> = ({
                               {concept.visual.data.rows?.map((row: string[], ri: number) => (
                                 <tr key={ri} className={ri % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-800/50'}>
                                   {row.map((cell: string, ci: number) => (
-                                    <td key={ci} className={`p-2 border border-slate-300 dark:border-slate-600 font-mono ${cell === 'T' ? 'text-emerald-600 font-bold' : cell === 'F' ? 'text-rose-600 font-bold' : ''}`}>
+                                    <td key={ci} className={`p-2 border border-slate-300 dark:border-slate-600 font-mono text-slate-800 dark:text-slate-200 ${cell === 'T' ? 'text-emerald-700 dark:text-emerald-400 font-bold' : cell === 'F' ? 'text-rose-700 dark:text-rose-400 font-bold' : ''}`}>
                                       {cell}
                                     </td>
                                   ))}

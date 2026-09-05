@@ -199,25 +199,31 @@ export const Sidebar: React.FC<SidebarProps> = ({
           })}
         </nav>
 
-        {/* Next Exam Widget in Sidebar (from Clean Minimalism Design) */}
+        {/* Next Exam Widget in Sidebar */}
         <div className="p-4 mt-auto">
-          <div className="bg-slate-900 rounded-xl p-4 text-white border border-slate-800 shadow-xs">
-            <p className="text-xs text-slate-400 mb-1">Next Exam</p>
-            <p className="font-bold text-sm mb-3 text-slate-100">Logic & Cognitive (CM3321)</p>
+          <div
+            className={`rounded-xl p-4 border shadow-xs transition-colors ${
+              darkMode
+                ? 'bg-slate-900 border-slate-800 text-white'
+                : 'bg-slate-50 border-slate-200 text-slate-900'
+            }`}
+          >
+            <p className={`text-xs mb-1 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>Next Exam</p>
+            <p className={`font-bold text-sm mb-3 ${darkMode ? 'text-slate-100' : 'text-slate-800'}`}>Logic & Cognitive (CM3321)</p>
             <div className="flex items-center gap-2 mb-2">
-              <div className="flex-1 h-1 bg-slate-700 rounded-full overflow-hidden">
+              <div className={`flex-1 h-1.5 rounded-full overflow-hidden ${darkMode ? 'bg-slate-800' : 'bg-slate-200'}`}>
                 <div
-                  className="bg-blue-500 h-full transition-all duration-300"
+                  className="bg-blue-600 h-full transition-all duration-300"
                   style={{ width: `${completionPct}%` }}
                 />
               </div>
-              <span className="text-[10px] font-mono text-slate-300">{completionPct}%</span>
+              <span className={`text-[10px] font-mono ${darkMode ? 'text-slate-300' : 'text-slate-600'}`}>{completionPct}%</span>
             </div>
-            <div className="flex items-center justify-between text-[11px] text-slate-400 pt-1">
+            <div className={`flex items-center justify-between text-[11px] pt-1 ${darkMode ? 'text-slate-400' : 'text-slate-500'}`}>
               <span>{reviewedCount}/{totalQuestions} Mastered</span>
               <button
                 onClick={() => onSelectSection('past-paper')}
-                className="text-blue-400 hover:underline font-medium"
+                className="text-blue-600 dark:text-blue-400 hover:underline font-medium"
               >
                 Review
               </button>

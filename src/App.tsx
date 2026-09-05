@@ -55,12 +55,12 @@ export default function App() {
     });
   };
 
-  // Dark Mode (localStorage persistent)
+  // Dark Mode (localStorage persistent, defaulting to clean light theme)
   const [darkMode, setDarkMode] = useState<boolean>(() => {
     try {
       const saved = localStorage.getItem('cm3321_theme');
       if (saved) return saved === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return false;
     } catch {
       return false;
     }

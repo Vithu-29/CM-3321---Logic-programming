@@ -9,6 +9,18 @@
     <meta property="og:description" content="Comprehensive exam revision platform for CM 3321 Logic Programming and Artificial Cognitive Systems, featuring past paper solutions, lecture study notes, topic explorer, and revision guides." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      (function() {
+        try {
+          var saved = localStorage.getItem('cm3321_theme');
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
